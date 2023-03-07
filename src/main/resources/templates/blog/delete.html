@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Blog</title>
+</head>
+<body>
+<form th:action="@{/blog/delete}" method="post">
+    <div class="form-group">
+        <label class="control-label btn-danger">You want to delete this blog</label>\
+        <input type="hidden" name="id" th:field="${blog.id}">
+        <input
+                type="text"
+                class="form-control"
+                th:field="${blog.title}"
+                placeholder="${blog.title}"/>
+
+    </div>
+<!--    <div class="form-group">-->
+<!--        <label class="control-label">Image</label>-->
+<!--        <input-->
+<!--                type="text"-->
+<!--                class="form-control"-->
+<!--                th:field="*{image}"-->
+<!--                placeholder="Image"-->
+<!--        />-->
+<!--    </div>-->
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+</body>
+</html>

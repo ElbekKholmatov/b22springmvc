@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Blog</title>
+</head>
+<body>
+<form th:action="@{/blog/edit}" method="post">
+    <div class="form-group">
+        <label class="control-label">Title</label>
+        <input type="hidden" name="id" th:field="${blog.id}">
+        <input
+                type="text"
+                class="form-control"
+                name="title"
+                th:field="${blog.title}"
+                placeholder="${blog.title}"
+        />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Overview</label>
+        <input
+                type="text"
+                class="form-control"
+                name="overview"
+                th:field="${blog.overview}"
+                placeholder="${blog.overview}"
+        />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Content</label>
+        <textarea
+                class="form-control"
+                name="content"
+                th:field="${blog.content}"
+                placeholder="${blog.content}"
+        />
+    </div>
+<!--    <div class="form-group">-->
+<!--        <label class="control-label">Image</label>-->
+<!--        <input-->
+<!--                type="text"-->
+<!--                class="form-control"-->
+<!--                th:field="*{image}"-->
+<!--                placeholder="Image"-->
+<!--        />-->
+<!--    </div>-->
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+</body>
+</html>

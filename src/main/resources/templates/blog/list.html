@@ -20,6 +20,7 @@
         <th>id</th>
         <th>Title</th>
         <th>Overview</th>
+        <th>Content</th>
     </tr>
     <tbody>
     <th:block th:each="blog, count : ${blogs}">
@@ -27,9 +28,19 @@
             <td th:text="${count.count}"></td>
             <td th:text="${blog.title}"></td>
             <td th:text="${blog.overview}"></td>
+            <td>
+                <details>
+                <summary>Content</summary>
+                    <p th:text="${blog.content}"></p>
+                </details>
+            </td>
+            <td>
+                <a th:href="@{/blog/delete/{id}(id=${blog.id})}" class="btn btn-danger">Delete</a>
+                <a th:href="@{/blog/edit/{id}(id=${blog.id})}" class="btn btn-warning">Edit</a>
+                <a th:href="@{/blog/comment/{id}(id=${blog.id})}" class="btn btn-info">Comment</a>
+            </td>
         </tr>
     </th:block>
-
     </tbody>
 </table>
 

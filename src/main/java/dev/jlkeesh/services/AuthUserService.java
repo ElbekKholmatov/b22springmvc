@@ -15,7 +15,8 @@ public class AuthUserService implements UserDetailsService {
             "john", "123",
             "jlkesh", "123",
             "bratan", "123",
-            "elshod", "8"
+            "elshod", "8",
+            "jason","0809"
     );
 
     @Override

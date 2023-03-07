@@ -31,4 +31,20 @@ public class BlogDAO extends BaseDAO<Blog, String> {
         return jdbcTemplate.query("select * from blog", mapper());
     }
 
+    public boolean update(Blog blog) {
+        jdbcTemplate.update("update blog set title = ?, overview = ?, content = ? where id = ?;",
+                blog.getTitle(),
+                blog.getOverview(),
+                blog.getContent(),
+                blog.getId());
+        return true;
+    }
+
+    public boolean delete(Blog blog) {
+        jdbcTemplate.update("delete from blog where id = ?;", blog.getId());
+        return true;
+    }
+
+
+
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comment</title>
+</head>
+<body>
+<form th:action="@{/blog/comment}" method="post">
+    <div class="form-group">
+        <label class="control-label">Comment</label>
+        <input type="hidden" name="blog_id" th:field="${blog.id}">
+      <input type="hidden" name="user_id" th:field="${user.id}">
+        <input
+                type="text"
+                class="form-control"
+                name="comment"
+                placeholder="Write your comment here"
+        />
+    </div>
+    <button type="submit" class="btn btn-primary">Publish</button>
+</form>
+</body>
+</html>

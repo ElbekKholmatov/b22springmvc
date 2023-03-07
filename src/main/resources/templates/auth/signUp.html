@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"
-xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments :: head(title = 'Login Page')">
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head(title = 'Sign Up Page')">
 </head>
 <body>
 <div class="row">
     <div class="col-md-10 offset-1">
-        <form class="form" method="post" th:action="@{/auth/login}">
+        <form class="form" method="post" th:action="@{/auth/register}">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" id="username" name="username">
@@ -15,13 +15,17 @@ xmlns:th="http://www.thymeleaf.org">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password">
             </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+            </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Remember Me</label>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
-        <span class="sub">Don't registered yet? <a th:href="@{/auth/register}">Sign Up</a></span>
+        <span class="sub">Don't registered yet? <a th:href="@{/auth/login}">Login</a></span>
     </div>
 </div>
 </body>

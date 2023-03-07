@@ -18,13 +18,15 @@ public class SecurityConfigurer {
         http.csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/auth/login")
+                .requestMatchers("/auth/login", "/auth/register")
                 .permitAll()
                 .anyRequest()
                 .fullyAuthenticated();
         http.formLogin()
                 .loginPage("/auth/login")
+                .loginPage("/auth/register")
                 .loginProcessingUrl("/auth/login")
+                .loginProcessingUrl("/auth/register")
                 .defaultSuccessUrl("/blog", false);
         return http.build();
     }
